@@ -240,3 +240,6 @@ def webhook():
     asyncio.run(app.process_update(update))
 
     return "ok"
+
+
+app = flask_app
