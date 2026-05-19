@@ -15,6 +15,7 @@ import os
 from solo import solo_menu
 from titan import titan_menu
 from rai import rai_menu
+from demon import demon_menu
 
 
 TOKEN = os.getenv("BOT_TOKEN")
@@ -27,7 +28,8 @@ CATALOG_PHOTO_ID = "AgACAgIAAxkBAAIBWGoAAY2MGDmmO-Ua71NQ5vfPXNf2GAAC7hdrG9PHCUjM
 anime_buttons = [
     [InlineKeyboardButton("⚔️ Поднятие уровня в одиночку", callback_data="solo")],
     [InlineKeyboardButton("🪽 Атака титанов", callback_data="titan")],
-    [InlineKeyboardButton("🔥 Адский рай", callback_data="rai")]
+    [InlineKeyboardButton("🔥 Адский рай", callback_data="rai")],
+    [InlineKeyboardButton("🗡 Клинок рассекающих демонов", callback_data="demon")]
 ]
 
 
@@ -151,6 +153,10 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data.startswith("rai"):
 
         await rai_menu(query, context)
+
+    elif query.data.startswith("demon"):
+
+        await demon_menu(query, context)
 
     else:
 
