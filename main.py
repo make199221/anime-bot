@@ -76,6 +76,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     query = update.callback_query
+
     await query.answer()
 
     if query.data == "check_sub":
@@ -221,6 +222,12 @@ telegram_app.add_handler(CallbackQueryHandler(buttons))
 print("BOT STARTED")
 
 
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
+
+loop.run_until_complete(telegram_app.initialize())
+
+
 flask_app = Flask(__name__)
 
 
@@ -236,13 +243,9 @@ def webhook():
 
     update = Update.de_json(data, telegram_app.bot)
 
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-
-    loop.run_until_complete(telegram_app.initialize())
-    loop.run_until_complete(telegram_app.process_update(update))
-
-    loop.close()
+    loop.run_until_complete(
+        telegram_app.process_update(update)
+    )
 
     return "ok"
 
