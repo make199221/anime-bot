@@ -167,54 +167,20 @@ async def get_video(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if update.message.video and update.message.caption:
 
-        file_id = update.message.video.file_id
-        key = update.message.caption
-
-        for filename in os.listdir():
-
-            if filename.endswith(".py"):
-
-                with open(filename, "r", encoding="utf-8") as f:
-                    content = f.read()
-
-                old = f'"{key}": "VIDEO_ID"'
-                new = f'"{key}": "{file_id}"'
-
-                if old in content:
-
-                    content = content.replace(old, new)
-
-                    with open(filename, "w", encoding="utf-8") as f:
-                        f.write(content)
-
-                    print(f"\n✅ {key} ГОТОВО В {filename}\n")
+        print("\n🎬 VIDEO DETECTED")
+        print("KEY:", update.message.caption)
+        print("VIDEO ID:", update.message.video.file_id)
+        print()
 
 
 async def get_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if update.message.photo and update.message.caption:
 
-        file_id = update.message.photo[-1].file_id
-        key = update.message.caption
-
-        for filename in os.listdir():
-
-            if filename.endswith(".py"):
-
-                with open(filename, "r", encoding="utf-8") as f:
-                    content = f.read()
-
-                old = f'"{key}": "PHOTO_ID"'
-                new = f'"{key}": "{file_id}"'
-
-                if old in content:
-
-                    content = content.replace(old, new)
-
-                    with open(filename, "w", encoding="utf-8") as f:
-                        f.write(content)
-
-                    print(f"\n✅ {key} PHOTO ГОТОВО В {filename}\n")
+        print("\n🖼 PHOTO DETECTED")
+        print("KEY:", update.message.caption)
+        print("PHOTO ID:", update.message.photo[-1].file_id)
+        print()
 
 
 telegram_app = Application.builder().token(TOKEN).build()
