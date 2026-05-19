@@ -210,13 +210,13 @@ async def get_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     print(f"\n✅ {key} PHOTO ГОТОВО В {filename}\n")
 
 
-app = Application.builder().token(TOKEN).build()
+telegram_app = Application.builder().token(TOKEN).build()
 
-app.add_handler(MessageHandler(filters.VIDEO, get_video))
-app.add_handler(MessageHandler(filters.PHOTO, get_photo))
+telegram_app.add_handler(MessageHandler(filters.VIDEO, get_video))
+telegram_app.add_handler(MessageHandler(filters.PHOTO, get_photo))
 
-app.add_handler(CommandHandler("start", start))
-app.add_handler(CallbackQueryHandler(buttons))
+telegram_app.add_handler(CommandHandler("start", start))
+telegram_app.add_handler(CallbackQueryHandler(buttons))
 
 print("BOT STARTED")
 
@@ -234,10 +234,10 @@ def webhook():
 
     data = request.get_json(force=True)
 
-    update = Update.de_json(data, app.bot)
+    update = Update.de_json(data, telegram_app.bot)
 
-    asyncio.run(app.initialize())
-    asyncio.run(app.process_update(update))
+    asyncio.run(telegram_app.initialize())
+    asyncio.run(telegram_app.process_update(update))
 
     return "ok"
 
