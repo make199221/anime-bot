@@ -6,7 +6,7 @@ SEASON_PHOTOS = {
     "demon_s2": "AgACAgIAAxkBAAIEbGoNbON_lSoMcJZC9XyIAZVZJyy5AALHHmsbmRJxSIHU-YOOZIPrAQADAgADeQADOwQ",
     "demon_s3": "AgACAgIAAxkBAAIEbWoNbQknmfesQn60FmN_IjIdsvchAALJHmsbmRJxSCZD4t66OBz_AQADAgADeQADOwQ",
     "demon_s4": "AgACAgIAAxkBAAIEbmoNbT1Hi-jKba0CzJtTMO5ahirmAALNHmsbmRJxSGB9SviSdWP2AQADAgADeQADOwQ",
-    "demon_s5": "PHOTO_ID"
+    "demon_s5": "AgACAgIAAxkBAAIEb2oNbU3J9_jt9q5waF1Q0nNKch_fAALOHmsbmRJxSATzzkT5PPjzAQADAgADeQADOwQ"
 }
 
 season_buttons = [
@@ -321,7 +321,7 @@ SEASON_PHOTOS = {
     "demon_s2": "AgACAgIAAxkBAAIEbGoNbON_lSoMcJZC9XyIAZVZJyy5AALHHmsbmRJxSIHU-YOOZIPrAQADAgADeQADOwQ",
     "demon_s3": "AgACAgIAAxkBAAIEbWoNbQknmfesQn60FmN_IjIdsvchAALJHmsbmRJxSCZD4t66OBz_AQADAgADeQADOwQ",
     "demon_s4": "AgACAgIAAxkBAAIEbmoNbT1Hi-jKba0CzJtTMO5ahirmAALNHmsbmRJxSGB9SviSdWP2AQADAgADeQADOwQ",
-    "demon_s5": "PHOTO_ID"
+    "demon_s5": "AgACAgIAAxkBAAIEb2oNbU3J9_jt9q5waF1Q0nNKch_fAALOHmsbmRJxSATzzkT5PPjzAQADAgADeQADOwQ"
 }
 
 season_buttons = [
