@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 SEASON_PHOTOS = {
@@ -463,7 +463,6 @@ async def titan_menu(query, context):
             ])
         )
 
-=======
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 SEASON_PHOTOS = {
@@ -928,5 +927,4 @@ async def titan_menu(query, context):
             ])
         )
 
->>>>>>> 0ce684e35d73729033b4f65cf6c877d8cb663463
         context.user_data["video_msg"] = msg.message_id
