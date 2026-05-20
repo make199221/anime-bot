@@ -194,7 +194,7 @@ async def get_video(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
-        REPO = "AslanZhaiman/anime-bot"
+        REPO = "make199221/anime-bot"
 
         url = f"https://api.github.com/repos/{REPO}/contents/{py_file}"
 
