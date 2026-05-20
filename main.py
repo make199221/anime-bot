@@ -190,9 +190,6 @@ async def get_video(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         content = content.replace(old, new)
 
-        with open(py_file, "w", encoding="utf-8") as f:
-            f.write(content)
-
         GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
         REPO = "make199221/anime-bot"
@@ -207,8 +204,7 @@ async def get_video(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         sha = r.json()["sha"]
 
-        with open(py_file, "rb") as f:
-            encoded = base64.b64encode(f.read()).decode()
+        encoded = base64.b64encode(content.encode("utf-8")).decode()
 
         data = {
             "message": f"auto update {key}",
@@ -245,9 +241,6 @@ async def get_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         content = content.replace(old, new)
 
-        with open(py_file, "w", encoding="utf-8") as f:
-            f.write(content)
-
         GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
         REPO = "make199221/anime-bot"
@@ -262,8 +255,7 @@ async def get_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         sha = r.json()["sha"]
 
-        with open(py_file, "rb") as f:
-            encoded = base64.b64encode(f.read()).decode()
+        encoded = base64.b64encode(content.encode("utf-8")).decode()
 
         data = {
             "message": f"auto update photo {key}",
