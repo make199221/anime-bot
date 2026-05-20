@@ -226,9 +226,54 @@ async def get_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.message.photo and update.message.caption:
 
         print("\n🖼 PHOTO DETECTED")
-        print("KEY:", update.message.caption)
-        print("PHOTO ID:", update.message.photo[-1].file_id)
-        print()
+
+        full_key = update.message.caption
+        file_id = update.message.photo[-1].file_id
+
+        print("PHOTO KEY:", full_key)
+        print("PHOTO ID:", file_id)
+
+        anime_file, key = full_key.split("|")
+
+        py_file = f"{anime_file}.py"
+
+        with open(py_file, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        old = f'"{key}": "PHOTO_ID"'
+        new = f'"{key}": "{file_id}"'
+
+        content = content.replace(old, new)
+
+        with open(py_file, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+
+        REPO = "make199221/anime-bot"
+
+        url = f"https://api.github.com/repos/{REPO}/contents/{py_file}"
+
+        headers = {
+            "Authorization": f"token {GITHUB_TOKEN}"
+        }
+
+        r = requests.get(url, headers=headers)
+
+        sha = r.json()["sha"]
+
+        with open(py_file, "rb") as f:
+            encoded = base64.b64encode(f.read()).decode()
+
+        data = {
+            "message": f"auto update photo {key}",
+            "content": encoded,
+            "sha": sha
+        }
+
+        requests.put(url, headers=headers, json=data)
+
+        print("✅ PHOTO AUTO UPDATED:", key)
 
 
 telegram_app = Application.builder().token(TOKEN).build()
