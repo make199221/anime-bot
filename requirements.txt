@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 python-telegram-bot==20.7
+=======
+python-telegram-bot==20.7
+>>>>>>> 0ce684e35d73729033b4f65cf6c877d8cb663463
 flask
