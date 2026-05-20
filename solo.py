@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 SOLO_PHOTO_ID = "AgACAgIAAxkBAAIBTGoAAYSMvTScmYSOFxvNxLTl5TLkoQAClBdrG9PHCUhDXoD8Lj4p1wEAAwIAA3kAAzsE"
@@ -217,7 +216,6 @@ async def solo_menu(query, context):
         )
 
         context.user_data["video_msg"] = msg.message_id
-=======
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 SOLO_PHOTO_ID = "AgACAgIAAxkBAAIBTGoAAYSMvTScmYSOFxvNxLTl5TLkoQAClBdrG9PHCUhDXoD8Lj4p1wEAAwIAA3kAAzsE"
@@ -436,4 +434,3 @@ async def solo_menu(query, context):
         )
 
         context.user_data["video_msg"] = msg.message_id
->>>>>>> 0ce684e35d73729033b4f65cf6c877d8cb663463
