@@ -4,7 +4,7 @@ SEASON_PHOTOS = {
     "demon_main": "AgACAgIAAxkBAAIEQWoMqEvL0IyczdkVqcK38CHMk41YAAI2G2sbmRJpSJG1TU1nsqCIAQADAgADeQADOwQ",
     "demon_s1": "AgACAgIAAxkBAAIEZmoNabxAxAr6kQ6RJEmjgou3ltDBAAK0HmsbmRJxSMD7XiW0MKCEAQADAgADeQADOwQ",
     "demon_s2": "AgACAgIAAxkBAAIEbGoNbON_lSoMcJZC9XyIAZVZJyy5AALHHmsbmRJxSIHU-YOOZIPrAQADAgADeQADOwQ",
-    "demon_s3": "PHOTO_ID",
+    "demon_s3": "AgACAgIAAxkBAAIEbWoNbQknmfesQn60FmN_IjIdsvchAALJHmsbmRJxSCZD4t66OBz_AQADAgADeQADOwQ",
     "demon_s4": "PHOTO_ID",
     "demon_s5": "PHOTO_ID"
 }
@@ -319,7 +319,7 @@ SEASON_PHOTOS = {
     "demon_main": "AgACAgIAAxkBAAIEQWoMqEvL0IyczdkVqcK38CHMk41YAAI2G2sbmRJpSJG1TU1nsqCIAQADAgADeQADOwQ",
     "demon_s1": "AgACAgIAAxkBAAIEZmoNabxAxAr6kQ6RJEmjgou3ltDBAAK0HmsbmRJxSMD7XiW0MKCEAQADAgADeQADOwQ",
     "demon_s2": "AgACAgIAAxkBAAIEbGoNbON_lSoMcJZC9XyIAZVZJyy5AALHHmsbmRJxSIHU-YOOZIPrAQADAgADeQADOwQ",
-    "demon_s3": "PHOTO_ID",
+    "demon_s3": "AgACAgIAAxkBAAIEbWoNbQknmfesQn60FmN_IjIdsvchAALJHmsbmRJxSCZD4t66OBz_AQADAgADeQADOwQ",
     "demon_s4": "PHOTO_ID",
     "demon_s5": "PHOTO_ID"
 }
