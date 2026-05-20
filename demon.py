@@ -119,7 +119,7 @@ VIDEOS = {
     # ===== 1 СЕЗОН =====
     "demon_s1ep1": "BAACAgIAAxkBAAIEV2oNNbV1mFPOpNude7NZUQVA_7CwAAK7mgACmRJpSDfm2yGvt4JHOwQ",
     "demon_s1ep2": "BAACAgIAAxkBAAIEfmoNcFa_UT-LsKi2Zn4WQ1spRnsIAAKEmAACmRJxSHkWcnBO8HFwOwQ",
-    "demon_s1ep3": "VIDEO_ID",
+    "demon_s1ep3": "BAACAgIAAxkBAAIEgGoNcZ8DeOMx-_Q2biOcCwFu27KQAAKSmAACmRJxSCxYw-6uVDn7OwQ",
     "demon_s1ep4": "VIDEO_ID",
     "demon_s1ep5": "VIDEO_ID",
     "demon_s1ep6": "VIDEO_ID",
@@ -434,7 +434,7 @@ VIDEOS = {
     # ===== 1 СЕЗОН =====
     "demon_s1ep1": "BAACAgIAAxkBAAIEV2oNNbV1mFPOpNude7NZUQVA_7CwAAK7mgACmRJpSDfm2yGvt4JHOwQ",
     "demon_s1ep2": "BAACAgIAAxkBAAIEfmoNcFa_UT-LsKi2Zn4WQ1spRnsIAAKEmAACmRJxSHkWcnBO8HFwOwQ",
-    "demon_s1ep3": "VIDEO_ID",
+    "demon_s1ep3": "BAACAgIAAxkBAAIEgGoNcZ8DeOMx-_Q2biOcCwFu27KQAAKSmAACmRJxSCxYw-6uVDn7OwQ",
     "demon_s1ep4": "VIDEO_ID",
     "demon_s1ep5": "VIDEO_ID",
     "demon_s1ep6": "VIDEO_ID",
