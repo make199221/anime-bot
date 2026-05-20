@@ -16,6 +16,7 @@ from solo import solo_menu
 from titan import titan_menu
 from rai import rai_menu
 from demon import demon_menu
+from demon import VIDEOS
 
 
 TOKEN = os.getenv("BOT_TOKEN")
@@ -170,6 +171,10 @@ async def get_video(update: Update, context: ContextTypes.DEFAULT_TYPE):
         print("\n🎬 VIDEO DETECTED")
         print("KEY:", update.message.caption)
         print("VIDEO ID:", update.message.video.file_id)
+        key = update.message.caption
+        file_id = update.message.video.file_id
+
+        VIDEOS[key] = file_id
         print()
 
 

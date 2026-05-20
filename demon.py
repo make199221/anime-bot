@@ -1,7 +1,7 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 SEASON_PHOTOS = {
-    "demon_main": "PHOTO_ID",
+    "demon_main": "AgACAgIAAxkBAAIEQWoMqEvL0IyczdkVqcK38CHMk41YAAI2G2sbmRJpSJG1TU1nsqCIAQADAgADeQADOwQ",
     "demon_s1": "PHOTO_ID",
     "demon_s2": "PHOTO_ID",
     "demon_s3": "PHOTO_ID",
