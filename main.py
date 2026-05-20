@@ -11,12 +11,13 @@ from telegram.ext import (
 from flask import Flask, request
 import asyncio
 import os
+import requests
+import base64
 
 from solo import solo_menu
 from titan import titan_menu
 from rai import rai_menu
 from demon import demon_menu
-from demon import VIDEOS
 
 
 TOKEN = os.getenv("BOT_TOKEN")
@@ -169,13 +170,54 @@ async def get_video(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.message.video and update.message.caption:
 
         print("\n🎬 VIDEO DETECTED")
-        print("KEY:", update.message.caption)
-        print("VIDEO ID:", update.message.video.file_id)
-        key = update.message.caption
+
+        full_key = update.message.caption
         file_id = update.message.video.file_id
 
-        VIDEOS[key] = file_id
-        print()
+        print("FULL KEY:", full_key)
+        print("VIDEO ID:", file_id)
+
+        anime_file, key = full_key.split("|")
+
+        py_file = f"{anime_file}.py"
+
+        with open(py_file, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        old = f'"{key}": "VIDEO_ID"'
+        new = f'"{key}": "{file_id}"'
+
+        content = content.replace(old, new)
+
+        with open(py_file, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+
+        REPO = "AslanZhaiman/anime-bot"
+
+        url = f"https://api.github.com/repos/{REPO}/contents/{py_file}"
+
+        headers = {
+            "Authorization": f"token {GITHUB_TOKEN}"
+        }
+
+        r = requests.get(url, headers=headers)
+
+        sha = r.json()["sha"]
+
+        with open(py_file, "rb") as f:
+            encoded = base64.b64encode(f.read()).decode()
+
+        data = {
+            "message": f"auto update {key}",
+            "content": encoded,
+            "sha": sha
+        }
+
+        requests.put(url, headers=headers, json=data)
+
+        print("✅ AUTO UPDATED:", key)
 
 
 async def get_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
