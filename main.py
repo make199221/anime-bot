@@ -8,7 +8,7 @@ from telegram.ext import (
     filters
 )
 
-from flask import Flask, request
+from flask import Flask, requests
 import asyncio
 import os
 import requests
@@ -258,7 +258,7 @@ def home():
 @flask_app.route("/webhook", methods=["POST"])
 def webhook():
 
-    data = request.get_json(force=True)
+    data = requests.get_json(force=True)
 
     update = Update.de_json(data, telegram_app.bot)
 
